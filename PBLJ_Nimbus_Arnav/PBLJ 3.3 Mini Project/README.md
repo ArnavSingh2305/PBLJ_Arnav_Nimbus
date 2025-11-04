@@ -2,14 +2,15 @@
 
 ## Overview
 
-This is a **Spring + Hibernate-based mini project** for managing students, courses, and fee payments. It demonstrates:
+This is a **Spring + Hibernate-based mini project** designed to manage students, courses, and fee payments.
+It demonstrates the integration of **Spring Framework** and **Hibernate ORM** using layered architecture and Java-based configuration.
 
-* **Dependency Injection** using Spring Java-based configuration
-* **CRUD operations** using Hibernate ORM
-* **Transaction Management** for fee payments and refunds
-* Integration of **Spring + Hibernate** in a layered architecture
+### Key Highlights
 
-The system provides a **menu-driven console interface** for performing operations like adding students, enrolling in courses, updating student data, deleting records, and handling payments and refunds.
+* **Dependency Injection (DI)** using Spring configuration classes
+* **CRUD operations** implemented with Hibernate ORM
+* **Transaction Management** for secure and atomic fee payments/refunds
+* **Console-based Menu Interface** for user interaction
 
 ---
 
@@ -17,34 +18,33 @@ The system provides a **menu-driven console interface** for performing operation
 
 1. **Student Management**
 
-   * Add, update, delete, and view students
-   * Assign students to courses
+   * Add, update, delete, and view student details
+   * Assign students to specific courses
 
 2. **Course Management**
 
-   * Add, update, delete, and view courses
+   * Add, update, delete, and view available courses
 
 3. **Fee Management**
 
-   * Pay fees
-   * Refund fees
-   * Ensures atomic transactions with rollback in case of failure
+   * Pay and refund student fees
+   * Maintains atomic transactions with rollback on failure
 
-4. **Console Interface**
+4. **Interactive Console**
 
-   * Menu-driven for easy interaction
-   * Real-time success/failure messages
+   * Menu-driven operations
+   * Real-time confirmation and status messages
 
 ---
 
 ## Technologies Used
 
-* Java 11+
-* Spring Framework (Core, ORM, TX)
-* Hibernate ORM
-* MySQL / H2 Database
-* Maven for dependency management
-* Log4j for logging
+* **Java 11+**
+* **Spring Framework** (Core, ORM, TX)
+* **Hibernate ORM**
+* **MySQL / H2 Database**
+* **Maven** for dependency management
+* **Log4j** for logging
 
 ---
 
@@ -91,42 +91,42 @@ OnlineStudentManagementSystem/
 CREATE DATABASE osm_db;
 ```
 
-2. (Optional) Run `schema.sql` to create tables:
+2. (Optional) Run the schema file to generate tables:
 
 ```sql
 USE osm_db;
--- Run the script provided in resources/schema.sql
+-- Run the script in src/main/resources/schema.sql
 ```
 
-3. Update database credentials in `hibernate.cfg.xml` if necessary:
+3. Update database credentials in `hibernate.cfg.xml`:
 
 ```xml
 <property name="hibernate.connection.username">root</property>
-<property name="hibernate.connection.password">password</property>
+<property name="hibernate.connection.password">your_password</property>
 ```
 
 ---
 
 ## Running the Project
 
-1. **Clone the repository** or download the project folder.
+1. **Clone or extract** the repository to your system.
 2. **Open in IDE** (IntelliJ IDEA or Eclipse).
-3. **Build with Maven**:
+3. **Build using Maven:**
 
 ```bash
 mvn clean install
 ```
 
-4. **Run the application**:
+4. **Run the Application:**
 
-* From IDE: Run `MainApp.java`
-* Or via terminal (if using Maven Shade plugin):
+   * From IDE → Run `MainApp.java`
+   * Or from terminal:
 
-```bash
-java -jar target/OnlineStudentManagementSystem-1.0-SNAPSHOT.jar
-```
+   ```bash
+   java -jar target/OnlineStudentManagementSystem-1.0-SNAPSHOT.jar
+   ```
 
-5. **Interact via console menu**:
+5. **Use the Console Menu:**
 
 ```
 === Online Student Management System ===
@@ -139,22 +139,12 @@ java -jar target/OnlineStudentManagementSystem-1.0-SNAPSHOT.jar
 Enter your choice:
 ```
 
-6. Follow prompts to perform operations.
-
 ---
 
 ## Notes
 
-* Transaction management ensures **atomic payments/refunds**.
-* Hibernate will **auto-create/update tables** using `hbm2ddl.auto=update`.
-* For testing without MySQL, you can switch to **H2 in-memory database**.
+* Transactions ensure **atomicity** — payments and refunds rollback if any issue occurs.
+* Hibernate auto-generates tables when `hbm2ddl.auto=update`.
+* For quick testing, replace MySQL configuration with **H2 Database** in memory mode.
 
 ---
-
-## 👨‍💻 Author
-
-Nimbus Submission by
-Harsh Kumar
-23BCS13912
-3rd Year CSE Student
-Submitted for: *Mini Project: Online Student Management System*
